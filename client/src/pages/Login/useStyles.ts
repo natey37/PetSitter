@@ -7,15 +7,25 @@ const useStyles = makeStyles(() => ({
       borderBottom: '1.2px solid rgba(0, 0, 0, 0.2)',
     },
   },
+  paper: {
+    backgroundColor: '#FAFAFB !important',
+  },
   authWrapper: {
     minHeight: '100vh',
     paddingTop: 23,
   },
   welcome: {
-    fontSize: 26,
-    paddingBottom: 20,
+    fontSize: 30,
+    // paddingBottom: 20,
     color: '#000000',
     fontWeight: 700,
+    marginTop: 30,
+    textAlign: 'center',
+    textShadow: '1px 1px grey',
+  },
+  loginContainer: {
+    background: 'white',
+    boxShadow: '1px 1px 5px lightgrey, -1px -1px 5px lightgrey',
   },
 }));
 
