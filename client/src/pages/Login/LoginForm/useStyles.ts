@@ -3,8 +3,9 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '60%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
+    marginLeft: '20%',
   },
   label: {
     fontSize: 19,
@@ -30,6 +31,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 16,
     backgroundColor: '#3a8dff',
     fontWeight: 'bold',
+  },
+  inputLabels: {
+    marginLeft: 5,
+    marginBottom: '-15px',
+    fontWeight: 'bold',
+    marginTop: '10px',
   },
 }));
 

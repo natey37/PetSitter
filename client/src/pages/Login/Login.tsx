@@ -37,7 +37,7 @@ export default function Login(): JSX.Element {
 
   return (
     <Grid container component="main" className={classes.root}>
-      <Grid item xs={12} sm={8} md={7} elevation={6} component={Paper} square>
+      <Grid item xs={12} component={Paper} square className={classes.paper}>
         <Box
           display="flex"
           justifyContent="space-between"
@@ -46,12 +46,10 @@ export default function Login(): JSX.Element {
           className={classes.authWrapper}
         >
           <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" />
-          <Box width="100%" maxWidth={450} p={3} alignSelf="center">
+          <Box width="100%" maxWidth={600} p={3} alignSelf="center" className={classes.loginContainer}>
             <Grid container>
               <Grid item xs>
-                <Typography className={classes.welcome} component="h1" variant="h5">
-                  Welcome back!
-                </Typography>
+                <h2 className={classes.welcome}>Sign in!</h2>
               </Grid>
             </Grid>
             <LoginForm handleSubmit={handleSubmit} />
