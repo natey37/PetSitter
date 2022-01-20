@@ -1,7 +1,8 @@
 import { green } from '@mui/material/colors';
 import { makeStyles } from '@mui/styles';
+import { Theme } from '@mui/material/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme: Theme) => ({
   root: {
     minHeight: '100vh',
     '& .MuiInput-underline:before': {
@@ -31,6 +32,7 @@ const useStyles = makeStyles(() => ({
   signupContainer: {
     background: 'white',
     boxShadow: '1px 1px 5px lightgrey, -1px -1px 5px lightgrey',
+    borderRadius: theme.shape.borderRadius,
   },
   memberText: {
     marginTop: 30,

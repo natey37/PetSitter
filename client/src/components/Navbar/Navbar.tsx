@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/useAuthContext';
 import {
+  Box,
+  Button,
+  CircularProgress,
   AppBar,
   Toolbar,
   IconButton,
@@ -13,8 +16,13 @@ import {
 } from '@mui/material';
 import { Menu as MenuIcon, AccountCircle } from '@mui/icons-material';
 import { Person as ProfileIcon, Logout as LogoutIcon, Settings as SettingsIcon } from '@mui/icons-material';
+import logo from '../../Images/logo.png';
+import useStyles from './useStyles';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
+  const classes = useStyles();
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { loggedInUser, logout } = useAuth();
 
@@ -34,14 +42,30 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+    <AppBar className={classes.root} position="static">
+      <Toolbar className={classes.toolbar}>
+        {/* <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
           <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        </IconButton> */}
+        {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           My App
-        </Typography>
+        </Typography> */}
+        <img src={logo}></img>
+        <div className={classes.flexContainer}>
+          <Link className={classes.link} to={'/'}>
+            BECOME A SITTER
+          </Link>
+          <Link className={classes.buttonLink} to={'/login'}>
+            <Button type="submit" className={classes.login}>
+              LOGIN
+            </Button>
+          </Link>
+          <Link className={classes.buttonLink} to={'/signup'}>
+            <Button type="submit" size="large" variant="contained" className={classes.signup}>
+              SIGN UP
+            </Button>
+          </Link>
+        </div>
         {loggedInUser && (
           <>
             <IconButton
