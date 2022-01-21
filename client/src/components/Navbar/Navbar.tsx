@@ -108,12 +108,14 @@ const Navbar: React.FC = () => {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>
-                  <ListItemIcon>
-                    <ProfileIcon fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText>Profile</ListItemText>
-                </MenuItem>
+                <Link style={{ textDecoration: 'none' }} to={'/profile'}>
+                  <MenuItem onClick={handleClose}>
+                    <ListItemIcon>
+                      <ProfileIcon fontSize="small" />
+                    </ListItemIcon>
+                    <ListItemText>Profile</ListItemText>
+                  </MenuItem>
+                </Link>
                 <Divider />
                 <MenuItem onClick={handleLogout}>
                   <ListItemIcon>
