@@ -43,10 +43,33 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: 'black',
     fontWeight: 'bold',
     marginRight: 30,
-    marginTop: '1.5%',
+    marginTop: 10,
   },
   buttonLink: {
     textDecoration: 'none',
+  },
+  navProfileImage: {
+    height: '200%',
+    width: 'auto',
+    borderRadius: '50%',
+  },
+  iconButton: {
+    height: 45,
+    width: 45,
+  },
+  messagesLink: {
+    textDecoration: 'none',
+    color: 'black',
+    fontWeight: 'bold',
+    marginTop: 10,
+    marginRight: 50,
+  },
+  myJobsLink: {
+    textDecoration: 'none',
+    color: 'black',
+    fontWeight: 'bold',
+    marginTop: 10,
+    marginRight: 50,
   },
 }));
 

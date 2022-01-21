@@ -4,24 +4,25 @@ import { theme } from './themes/theme';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Signup from './pages/SignUp/SignUp';
+import HomePage from './pages/HomePage/HomePage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import { AuthProvider } from './context/useAuthContext';
 import { SocketProvider } from './context/useSocketContext';
 import { SnackBarProvider } from './context/useSnackbarContext';
 import { Navbar } from './components/Navbar/Navbar';
-
 import './App.css';
 
 function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Navbar></Navbar>
+        {/* <Navbar></Navbar> */}
         <SnackBarProvider>
           <AuthProvider>
             <SocketProvider>
               <CssBaseline />
               <Switch>
+                <Route exact path="/home" component={HomePage} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/dashboard">
