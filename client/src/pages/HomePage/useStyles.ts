@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   header: {
     marginTop: 70,
-    fontSize: 50,
+    fontWeight: 'bold !important',
   },
 }));
 export default useStyles;

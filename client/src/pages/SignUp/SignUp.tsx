@@ -50,7 +50,6 @@ export default function Register(): JSX.Element {
             flexDirection="column"
             className={classes.authWrapper}
           >
-            {/* <AuthHeader linkTo="/login" asideText="Already have an account?" btnText="Login" /> */}
             <Box width="100%" maxWidth={600} p={3} alignSelf="center" className={classes.signupContainer}>
               <Grid container>
                 <Grid item xs>

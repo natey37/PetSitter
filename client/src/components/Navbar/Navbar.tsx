@@ -45,18 +45,12 @@ const Navbar: React.FC = () => {
   return (
     <AppBar className={classes.root} position="static">
       <Toolbar className={classes.toolbar}>
-        {/* <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
-        </IconButton> */}
-        {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          My App
-        </Typography> */}
         <Link to={'/home'}>
-          <img src={logo}></img>
+          <img src={logo} alt="Pet Sitter Logo"></img>
         </Link>
         {!loggedInUser && (
           <>
-            <div className={classes.flexContainer}>
+            <Box className={classes.flexContainer}>
               <Link className={classes.link} to={'/'}>
                 BECOME A SITTER
               </Link>
@@ -70,12 +64,12 @@ const Navbar: React.FC = () => {
                   SIGN UP
                 </Button>
               </Link>
-            </div>
+            </Box>
           </>
         )}
         {loggedInUser && (
           <>
-            <div className={classes.flexContainer}>
+            <Box className={classes.flexContainer}>
               <Link className={classes.myJobsLink} to={'/home'}>
                 My Jobs
               </Link>
@@ -91,7 +85,7 @@ const Navbar: React.FC = () => {
                 onClick={handleMenuOpen}
                 color="inherit"
               >
-                <img className={classes.navProfileImage} src={profile}></img>
+                <img className={classes.navProfileImage} src={profile} alt="Profile Picture"></img>
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -122,7 +116,7 @@ const Navbar: React.FC = () => {
                   <ListItemText>Logout</ListItemText>
                 </MenuItem>
               </Menu>
-            </div>
+            </Box>
           </>
         )}
       </Toolbar>

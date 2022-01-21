@@ -39,11 +39,10 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
-          <div className={classes.inputLabels}>WHERE</div>
+          <Box className={classes.inputLabels}>Where</Box>
           <TextField
             id="location"
             placeholder="Anywhere"
-            // label={<Typography className={classes.label}>E-mail address</Typography>}
             fullWidth
             margin="normal"
             InputProps={{
@@ -57,12 +56,11 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             value={values.location}
             onChange={handleChange}
           />
-          <div className={classes.inputLabels}>Drop In / Drop Off</div>
-          <div className={classes.flexContainer}>
+          <Box className={classes.inputLabels}>Drop In / Drop Off</Box>
+          <Box className={classes.flexContainer}>
             <TextField
               id="dates"
               placeholder="Your dates"
-              // label={<Typography className={classes.label}>dates</Typography>}
               fullWidth
               margin="normal"
               InputProps={{
@@ -78,7 +76,6 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             <TextField
               id="dates"
               placeholder="Your dates"
-              // label={<Typography className={classes.label}>dates</Typography>}
               fullWidth
               margin="normal"
               InputProps={{
@@ -91,7 +88,7 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
               value={values.dates}
               onChange={handleChange}
             />
-          </div>
+          </Box>
           <Box marginTop={5}>
             <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'FIND MY DOG SITTER'}

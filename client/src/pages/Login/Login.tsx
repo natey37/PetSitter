@@ -48,7 +48,6 @@ export default function Login(): JSX.Element {
             flexDirection="column"
             className={classes.authWrapper}
           >
-            {/* <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" /> */}
             <Box width="100%" maxWidth={600} p={3} alignSelf="center" className={classes.loginContainer}>
               <Grid container>
                 <Grid item xs>

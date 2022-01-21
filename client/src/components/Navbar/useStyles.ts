@@ -10,8 +10,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: '10vh',
   },
   login: {
-    // margin: theme.spacing(3, 2, 2),
-    // padding: 10,
     width: 120,
     height: 45,
     borderRadius: theme.shape.borderRadius,
@@ -23,8 +21,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginRight: '10px !important',
   },
   signup: {
-    // margin: theme.spacing(3, 2, 2),
-    // padding: 10,
     width: 120,
     height: 45,
     borderRadius: theme.shape.borderRadius,

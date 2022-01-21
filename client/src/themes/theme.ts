@@ -4,6 +4,9 @@ export const theme = createTheme({
   typography: {
     fontFamily: '"Roboto", "Arial"',
     fontSize: 12,
+    h2: {
+      fontWeight: 'bold',
+    },
     button: {
       textTransform: 'none',
       fontWeight: 700,

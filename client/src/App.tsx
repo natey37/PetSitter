@@ -16,7 +16,6 @@ function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        {/* <Navbar></Navbar> */}
         <SnackBarProvider>
           <AuthProvider>
             <SocketProvider>

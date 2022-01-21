@@ -55,12 +55,8 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
           <TextField
             id="email"
             placeholder="Your email"
-            // label={<Typography className={classes.label}>Your email</Typography>}
             fullWidth
             margin="normal"
-            // InputLabelProps={{
-            //   shrink: true,
-            // }}
             InputProps={{
               classes: { input: classes.inputs },
             }}
@@ -76,12 +72,8 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
           <TextField
             id="username"
             placeholder="Your name"
-            // label={<Typography className={classes.label}>Your name</Typography>}
             fullWidth
             margin="normal"
-            // InputLabelProps={{
-            //   shrink: true,
-            // }}
             InputProps={{
               classes: { input: classes.inputs },
             }}
@@ -96,12 +88,8 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
           <TextField
             id="password"
             placeholder="Create a password"
-            // label={<Typography className={classes.label}>Create a password</Typography>}
             fullWidth
             margin="normal"
-            // InputLabelProps={{
-            //   shrink: true,
-            // }}
             InputProps={{
               classes: { input: classes.inputs },
             }}

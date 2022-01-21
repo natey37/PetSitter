@@ -38,6 +38,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 'bold',
     marginTop: '10px',
   },
+  capitalize: {
+    // textTransform: 'uppercase',
+    // margin: 0,
+    // padding: 0,
+  },
   flexContainer: {
     display: 'flex',
     flexDirection: 'row',
