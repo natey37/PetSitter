@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    height: '90vh',
+    height: '100%',
+    backgroundColor: '#FAFAFB',
   },
   sidebar: {
     display: 'flex',
@@ -28,10 +29,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    backgroundColor: 'purple',
+    // backgroundColor: 'purple',
     marginTop: 55,
-    height: '85%',
-    width: 600,
+    height: '110%',
+    width: 700,
   },
   sideOption: {
     fontSize: 18,

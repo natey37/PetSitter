@@ -3,7 +3,7 @@ import { Navbar } from '../../components/Navbar/Navbar';
 import React, { useState } from 'react';
 import { Typography } from '@mui/material';
 import SideBar from './SideBar/Sidebar';
-import EditProfile from './EditProfile/EditProfile';
+import EditProfile from './EditProfileForm/EditProfileForm';
 import { FormikHelpers } from 'formik';
 
 export default function Profile(): JSX.Element {
