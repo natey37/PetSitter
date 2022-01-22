@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     boxShadow: '1px 1px 5px lightgrey, -1px -1px 5px lightgrey',
     borderRadius: theme.shape.borderRadius,
     marginTop: 55,
-    height: '60vh',
+    height: '70vh',
     width: 700,
     marginBottom: 250,
   },

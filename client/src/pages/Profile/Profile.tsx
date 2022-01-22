@@ -5,6 +5,8 @@ import { Typography } from '@mui/material';
 import SideBar from './SideBar/Sidebar';
 import EditProfile from './EditProfileForm/EditProfileForm';
 import EditProfilePhoto from './EditProfilePhoto/EditProfilePhoto';
+import EditPayment from './EditPayment/EditPayment';
+
 import { FormikHelpers } from 'formik';
 
 export default function Profile(): JSX.Element {
@@ -86,6 +88,13 @@ export default function Profile(): JSX.Element {
           <>
             <div className={classes.profilePhotoMainContainer}>
               <EditProfilePhoto></EditProfilePhoto>
+            </div>
+          </>
+        )}
+        {activeOption === 'payment' && (
+          <>
+            <div className={classes.profilePhotoMainContainer}>
+              <EditPayment></EditPayment>
             </div>
           </>
         )}
