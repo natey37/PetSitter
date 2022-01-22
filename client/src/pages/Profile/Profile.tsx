@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Typography } from '@mui/material';
 import SideBar from './SideBar/Sidebar';
 import EditProfile from './EditProfileForm/EditProfileForm';
+import EditProfilePhoto from './EditProfilePhoto/EditProfilePhoto';
 import { FormikHelpers } from 'formik';
 
 export default function Profile(): JSX.Element {
@@ -74,13 +75,20 @@ export default function Profile(): JSX.Element {
         <div className={classes.sidebar}>
           <SideBar activeOption={activeOption} setActiveOption={setActiveOption}></SideBar>
         </div>
-        <div className={classes.mainContainer}>
-          {activeOption === 'edit' && (
-            <>
+        {activeOption === 'edit' && (
+          <>
+            <div className={classes.editMainContainer}>
               <EditProfile handleSubmit={handleSubmit}></EditProfile>
-            </>
-          )}
-        </div>
+            </div>
+          </>
+        )}
+        {activeOption === 'profile' && (
+          <>
+            <div className={classes.profilePhotoMainContainer}>
+              <EditProfilePhoto></EditProfilePhoto>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
