@@ -6,6 +6,7 @@ import SideBar from './SideBar/Sidebar';
 import EditProfile from './EditProfileForm/EditProfileForm';
 import EditProfilePhoto from './EditProfilePhoto/EditProfilePhoto';
 import EditPayment from './EditPayment/EditPayment';
+import EditAvailability from './EditAvailability/EditAvailability';
 
 import { FormikHelpers } from 'formik';
 
@@ -88,6 +89,13 @@ export default function Profile(): JSX.Element {
           <>
             <div className={classes.profilePhotoMainContainer}>
               <EditProfilePhoto></EditProfilePhoto>
+            </div>
+          </>
+        )}
+        {activeOption === 'availability' && (
+          <>
+            <div className={classes.editMainContainer}>
+              <EditAvailability></EditAvailability>
             </div>
           </>
         )}
