@@ -11,19 +11,20 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: 'white',
   },
   header: {
-    // marginTop: 40,
+    marginBottom: '20px !important',
   },
   profilePhoto: {
     height: 150,
     borderRadius: '50%',
   },
   picText: {
-    width: '30%',
-    marginRight: 400,
-    marginBottom: 30,
+    width: '30% !important',
+    marginRight: '400px !important',
+    marginBottom: '30px !important',
     fontSize: 16,
     textAlign: 'center',
     color: 'gray',
+    whiteSpace: 'nowrap',
   },
   submit: {
     // margin: theme.spacing(3, 2, 2),

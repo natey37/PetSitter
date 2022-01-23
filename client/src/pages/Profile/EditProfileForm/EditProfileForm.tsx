@@ -84,14 +84,10 @@ export default function EditProfileForm({ handleSubmit }: Props): JSX.Element {
   };
 
   const [formValues, setFormValues] = useState({ formValues: form as FormValues });
-  console.log(formValues);
-  // useEffect(() => {
-  //   formValues;
-  //   debugger;
-  // }, [formValues]);
+
   return (
     <>
-      <div className={classes.flexContainer}>
+      <Box className={classes.flexContainer}>
         <h2 className={classes.header}>Edit Profile</h2>
         <Formik
           initialValues={{
@@ -106,28 +102,23 @@ export default function EditProfileForm({ handleSubmit }: Props): JSX.Element {
           }}
           validationSchema={Yup.object().shape({
             username: Yup.string().required('Name is required').max(40, 'Name is too long'),
-            email: Yup.string().required('Email is required').email('Email is not valid'),
-            password: Yup.string()
-              .required('Password is required')
-              .max(100, 'Password is too long')
-              .min(6, 'Password too short'),
           })}
           onSubmit={handleSubmit}
         >
           {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
             <form onSubmit={handleSubmit} className={classes.form} noValidate>
-              <div className={classes.outterFlexContainer}>
-                <div className={classes.labelFlexContainer}>
-                  <div className={classes.inputLabels}>First Name</div>
-                  <div className={classes.inputLabels}>Last Name</div>
-                  <div className={classes.inputLabels}>Gender</div>
-                  <div className={classes.inputLabels}>Birthdate</div>
-                  <div className={classes.inputLabels}>Email Address</div>
-                  <div className={classes.inputLabels}>Phone Number</div>
-                  <div className={classes.inputLabels}>Where You Live</div>
-                  <div className={classes.inputLabels}>Describe Yourself</div>
-                </div>
-                <div className={classes.inputFlexContainer}>
+              <Box className={classes.outterFlexContainer}>
+                <Box className={classes.labelFlexContainer}>
+                  <Box className={classes.inputLabels}>First Name</Box>
+                  <Box className={classes.inputLabels}>Last Name</Box>
+                  <Box className={classes.inputLabels}>Gender</Box>
+                  <Box className={classes.inputLabels}>Birthdate</Box>
+                  <Box className={classes.inputLabels}>Email Address</Box>
+                  <Box className={classes.inputLabels}>Phone Number</Box>
+                  <Box className={classes.inputLabels}>Where You Live</Box>
+                  <Box className={classes.inputLabels}>Describe Yourself</Box>
+                </Box>
+                <Box className={classes.inputFlexContainer}>
                   <TextField
                     id="firstName"
                     placeholder="John"
@@ -160,31 +151,11 @@ export default function EditProfileForm({ handleSubmit }: Props): JSX.Element {
                     onChange={handleChange}
                   />
                   <GenderSelect value={values.gender} handleChange={handleChange} />
-                  <div className={classes.birthdateFlexContainer}>
+                  <Box className={classes.birthdateFlexContainer}>
                     <MonthSelect value={formValues.formValues.month} handleChange={handleChange} />
                     <DaySelect value={formValues.formValues.day} handleChange={handleChange} />
                     <YearSelect value={formValues.formValues.year} handleChange={handleChange} />
-                    {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <DatePicker
-                        views={['month']}
-                        // label="Year"
-                        minDate={new Date('2012-03-01')}
-                        maxDate={new Date('2023-06-01')}
-                        value={values.birthdate}
-                        onChange={handleChange}
-                        renderInput={(params) => <TextField {...params} helperText={null} />}
-                      />
-                      <DatePicker
-                        views={['day']}
-                        // label="Year"
-                        minDate={new Date('2012-03-01')}
-                        maxDate={new Date('2023-06-01')}
-                        value={values.birthdate}
-                        onChange={handleChange}
-                        renderInput={(params) => <TextField {...params} helperText={null} />}
-                      />
-                    </LocalizationProvider> */}
-                  </div>
+                  </Box>
                   <TextField
                     id="email"
                     placeholder="john-doe@gmail.com"
@@ -248,8 +219,8 @@ export default function EditProfileForm({ handleSubmit }: Props): JSX.Element {
                     value={values.description}
                     onChange={handleChange}
                   />
-                </div>
-              </div>
+                </Box>
+              </Box>
               <Box textAlign="center" marginTop={5}>
                 <Button type="submit" size="large" variant="contained" className={classes.submit}>
                   {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Save'}
@@ -258,7 +229,7 @@ export default function EditProfileForm({ handleSubmit }: Props): JSX.Element {
             </form>
           )}
         </Formik>
-      </div>
+      </Box>
     </>
   );
 }

@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     // backgroundColor: 'red',
   },
   header: {
-    // marginTop: 40,
+    marginBottom: '20px !important',
   },
   profilePhoto: {
     height: 150,
@@ -35,6 +35,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 'bold',
     color: '#f14140 !important',
     border: 'solid 2px #f14140 !important',
+  },
+  deleteText: {
+    marginTop: '15px !important',
   },
 }));
 

@@ -7,19 +7,11 @@ import EditProfile from './EditProfileForm/EditProfileForm';
 import EditProfilePhoto from './EditProfilePhoto/EditProfilePhoto';
 import EditPayment from './EditPayment/EditPayment';
 import EditAvailability from './EditAvailability/EditAvailability';
-
 import { FormikHelpers } from 'formik';
 
 export default function Profile(): JSX.Element {
   const classes = useStyles();
-  const returnActive = (activeString: any) => {
-    return activeString;
-  };
 
-  // const handleSubmit = (string: string) => {
-  //   return string;
-  // };
-  //first name, last name, gender, birthdate, email address, phone number, where do u live, describe yourself
   const handleSubmit = (
     {
       firstName,
@@ -54,23 +46,32 @@ export default function Profile(): JSX.Element {
     }>,
   ) => {
     return true;
-    // register(username, email, password).then((data) => {
-    //   if (data.error) {
-    //     console.error({ error: data.error.message });
-    //     setSubmitting(false);
-    //     updateSnackBarMessage(data.error.message);
-    //   } else if (data.success) {
-    //     updateLoginContext(data.success);
-    //   } else {
-    //     // should not get here from backend but this catch is for an unknown issue
-    //     console.error({ data });
-    //     setSubmitting(false);
-    //     updateSnackBarMessage('An unexpected error occurred. Please try again');
-    //   }
-    // });
+    //TODO setup frontend form to backend profile
   };
 
   const [activeOption, setActiveOption] = useState<string>('edit');
+  const options = ['edit', 'profile', 'availability', 'payment', 'security', 'settings'];
+  const optionComponents = [
+    <EditProfile key="edit" handleSubmit={handleSubmit}></EditProfile>,
+    <EditProfilePhoto key="profile"></EditProfilePhoto>,
+    <EditAvailability key="availability"></EditAvailability>,
+    <EditPayment key="payment"></EditPayment>,
+    <Typography key="security" variant="h1">
+      Security under construction
+    </Typography>,
+    <Typography key="settings" variant="h1">
+      Settings under construction
+    </Typography>,
+  ];
+  const optionStyles = [
+    classes.editProfileContainer,
+    classes.profilePhotoContainer,
+    classes.availabilityContainer,
+    classes.paymentContainer,
+    classes.securityContainer,
+    classes.settingsContainer,
+  ];
+
   return (
     <>
       <Navbar></Navbar>
@@ -78,34 +79,11 @@ export default function Profile(): JSX.Element {
         <div className={classes.sidebar}>
           <SideBar activeOption={activeOption} setActiveOption={setActiveOption}></SideBar>
         </div>
-        {activeOption === 'edit' && (
-          <>
-            <div className={classes.editMainContainer}>
-              <EditProfile handleSubmit={handleSubmit}></EditProfile>
-            </div>
-          </>
-        )}
-        {activeOption === 'profile' && (
-          <>
-            <div className={classes.profilePhotoMainContainer}>
-              <EditProfilePhoto></EditProfilePhoto>
-            </div>
-          </>
-        )}
-        {activeOption === 'availability' && (
-          <>
-            <div className={classes.editMainContainer}>
-              <EditAvailability></EditAvailability>
-            </div>
-          </>
-        )}
-        {activeOption === 'payment' && (
-          <>
-            <div className={classes.profilePhotoMainContainer}>
-              <EditPayment></EditPayment>
-            </div>
-          </>
-        )}
+        {options.map((option, index) => {
+          if (activeOption === option) {
+            return <> {<div className={optionStyles[index]}>{optionComponents[index]}</div>}</>;
+          }
+        })}
       </div>
     </>
   );

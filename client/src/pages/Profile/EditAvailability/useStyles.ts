@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: 50,
   },
   header: {
-    marginTop: 40,
-    marginBottom: 50,
+    marginTop: '40px !important',
+    marginBottom: '50px !important',
   },
   outterContainer: {
     textAlign: 'center',
