@@ -9,6 +9,8 @@ import SignUpForm from './SignUpForm/SignUpForm';
 import AuthHeader from '../../components/AuthHeader/AuthHeader';
 import { useAuth } from '../../context/useAuthContext';
 import { useSnackBar } from '../../context/useSnackbarContext';
+import { Link } from 'react-router-dom';
+import { Navbar } from '../../components/Navbar/Navbar';
 
 export default function Register(): JSX.Element {
   const classes = useStyles();
@@ -37,29 +39,36 @@ export default function Register(): JSX.Element {
   };
 
   return (
-    <Grid container component="main" className={classes.root}>
-      <Grid item xs={12} sm={8} md={7} elevation={6} component={Paper} square>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="flex-start"
-          flexDirection="column"
-          className={classes.authWrapper}
-        >
-          <AuthHeader linkTo="/login" asideText="Already have an account?" btnText="Login" />
-          <Box width="100%" maxWidth={450} p={3} alignSelf="center">
-            <Grid container>
-              <Grid item xs>
-                <Typography className={classes.welcome} component="h1" variant="h5">
-                  Create an account
-                </Typography>
+    <>
+      <Navbar></Navbar>
+      <Grid container component="main" className={classes.root}>
+        <Grid item xs={12} component={Paper} square className={classes.paper}>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="flex-start"
+            flexDirection="column"
+            className={classes.authWrapper}
+          >
+            {/* <AuthHeader linkTo="/login" asideText="Already have an account?" btnText="Login" /> */}
+            <Box width="100%" maxWidth={600} p={3} alignSelf="center" className={classes.signupContainer}>
+              <Grid container>
+                <Grid item xs>
+                  <h2 className={classes.welcome}>Sign up</h2>
+                </Grid>
               </Grid>
-            </Grid>
-            <SignUpForm handleSubmit={handleSubmit} />
+              <SignUpForm handleSubmit={handleSubmit} />
+              <div className={classes.memberText}>
+                Already a member?&nbsp;
+                <Link className={classes.link} to="/login">
+                  Login
+                </Link>
+              </div>
+            </Box>
+            <Box p={1} alignSelf="center" />
           </Box>
-          <Box p={1} alignSelf="center" />
-        </Box>
+        </Grid>
       </Grid>
-    </Grid>
+    </>
   );
 }
