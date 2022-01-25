@@ -17,7 +17,7 @@ const profileSchema = new mongoose.Schema({
   description: { type: String },
   availability: {
     type: Map,
-    of: new Schema({
+    of: new mongoose.Schema({
       startDate: { type: Date },
       endDate: { type: Date },
       availableTimes: [{ startTime: { type: String }, endTime: { type: String}}]
@@ -26,7 +26,7 @@ const profileSchema = new mongoose.Schema({
   profilePhoto: { type: String },
   paymentOptions: { type: [String] },
   userId: {
-    type: Schema.Types.ObjectId, 
+    type: mongoose.Schema.Types.ObjectId, 
     ref: 'User', 
     required: true,
   },
